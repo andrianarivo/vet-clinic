@@ -27,8 +27,6 @@
 
 ### Tech Stack <a name="tech-stack"></a>
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
 <summary>Database</summary>
   <ul>
@@ -73,8 +71,6 @@ Clone this repository to your desired folder:
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
 
 👤 **Author1**
 
