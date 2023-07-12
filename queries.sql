@@ -42,3 +42,11 @@ SELECT COUNT(*) FROM (SELECT *
 	INNER JOIN vets ON vets.id = visits.vet_id) a
 LEFT JOIN specializations ON specializations.vet_id = a.vet_id AND specializations.species_id  = a.species_id
 WHERE specializations.vet_id IS NULL;
+
+SELECT COUNT(*), species.name AS species_name
+FROM animals
+INNER JOIN species ON animals.species_id = species.id
+INNER JOIN visits ON animals.id = visits.animal_id 
+INNER JOIN vets ON vets.id = visits.vet_id
+WHERE vets.name = 'Maisy Smith'
+GROUP BY species.name;
