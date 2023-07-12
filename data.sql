@@ -158,6 +158,34 @@ INSERT INTO animals (
 	22.0
 );
 
+BEGIN;
+UPDATE animals SET species = 'unspecified';
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+BEGIN;
+UPDATE animals SET species='digimon' WHERE name LIKE '%mon';
+UPDATE animals SET species='pokemon' WHERE species IS NULL;
+SELECT * from animals;
+COMMIT;
+SELECT * FROM animals;
+
+BEGIN;
+DELETE FROM animals;
+SELECT * FROM animals;
+ROLLBACK;
+SELECT * FROM animals;
+
+BEGIN;
+DELETE FROM animals WHERE date_of_birth>'2022-01-01';
+SAVEPOINT SP1;
+UPDATE animals SET weight_kg = (weight_kg * -1);
+ROLLBACK TO SP1;
+UPDATE animals SET weight_kg = (weight_kg * -1) WHERE weight_kg < 0;
+COMMIT;
+
+
 /* DAY 3 */
 
 INSERT INTO owners (
