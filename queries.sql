@@ -45,17 +45,5 @@ LEFT JOIN specializations ON specializations.vet_id = a.vet_id AND specializatio
 WHERE specializations.vet_id IS NULL;
 */
 
-SELECT COUNT(*)
-FROM visits v
-JOIN vets vt ON v.vet_id = vt.id
-JOIN animals a ON v.animal_id = a.id
-LEFT JOIN specializations s ON vt.id = s.vet_id AND s.species_id = a.species_id
-WHERE s.vet_id IS NULL;
-
-SELECT COUNT(*), species.name AS species_name
-FROM animals
-INNER JOIN species ON animals.species_id = species.id
-INNER JOIN visits ON animals.id = visits.animal_id 
-INNER JOIN vets ON vets.id = visits.vet_id
-WHERE vets.name = 'Maisy Smith'
-GROUP BY species.name;
+SELECT COUNT(*) FROM visits v JOIN vets vt ON v.vet_id = vt.id JOIN animals a ON v.animal_id = a.id LEFT JOIN specializations s ON vt.id = s.vet_id AND s.species_id = a.species_id WHERE s.vet_id IS NULL;
+SELECT COUNT(*), species.name AS species_name FROM animals INNER JOIN species ON animals.species_id = species.id INNER JOIN visits ON animals.id = visits.animal_id  INNER JOIN vets ON vets.id = visits.vet_id WHERE vets.name = 'Maisy Smith' GROUP BY species.name;
