@@ -65,3 +65,12 @@ CREATE TABLE visits (
 	CONSTRAINT fk_visits_vets FOREIGN KEY(vet_id) REFERENCES vets(id),
 	CONSTRAINT fk_visits_animals FOREIGN KEY(animal_id) REFERENCES animals(id)
 );
+
+/* PERFORMANCE AUDIT */
+
+ALTER TABLE visits DROP CONSTRAINT visits_pkey;
+ALTER TABLE owners ADD COLUMN email VARCHAR(120);
+CREATE INDEX visits_animal_id_asc ON visits(animal_id ASC);
+CREATE INDEX visits_vet_id_asc ON visits(vet_id ASC);
+CREATE INDEX visits_date_of_visit_asc ON visits(date_of_visit ASC);
+CREATE INDEX owners_email_asc ON owners(email ASC);
