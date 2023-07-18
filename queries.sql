@@ -41,3 +41,4 @@ SELECT COUNT(*), species.name AS species_name FROM animals INNER JOIN species ON
 /* PERFORMANCE AUDIT */
 
 SELECT COUNT(*) FROM visits where animal_id = 4;
+SELECT * FROM visits where vet_id = 2;
