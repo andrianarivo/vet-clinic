@@ -1,3 +1,5 @@
+![drawSQL-vet-clinic-export-2023-07-19](https://github.com/andrianarivo/vet-clinic/assets/32914511/bc66fa2b-addb-49bb-944d-996a6afbf24a)
+
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
